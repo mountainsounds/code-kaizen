@@ -1,0 +1,165 @@
+* {box-sizing: border-box}
+html {scroll-behavior: smooth}
+
+html, body {
+  margin: 0;
+}
+
+body {
+  background-color: #005691;
+  font-family: 'DM Sans', sans-serif;
+}
+
+nav {
+  width: 100%;
+  background: #303947;
+  padding: 20px;
+  margin-bottom: 30px;
+  color: whitesmoke;
+}
+
+.app-container {
+  margin: 25px auto;
+  position: relative;
+  border-radius: 10px;
+  width: 1200px;
+  height: 800px;
+  background: linear-gradient(180deg, rgba(224,233,253,1) 0%, rgba(233,236,241,1) 90%);
+  box-shadow: 0 0 0 10px rgba(255, 255, 255,.4);
+  display: flex;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+// ******************************************** Learning Skill Menu ********************************//
+
+.skillMenu {
+  flex-basis: 200px;
+  max-width: 200px;
+  flex-shrink: 0;
+  height: 100%;
+  width: 125px;
+  background-color: #f3f6fd;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 30px 30px 0;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+  }
+
+  &-list {
+    list-style-type: none;
+    padding: 0;
+
+    &-item {
+      position: relative;
+      margin-bottom: 4px;
+      cursor: pointer;
+
+      span {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 10px 16px;
+        color: #1f1c2e;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 24px;
+      }
+
+      &:hover { background-color: rgba(195, 207, 244, 0.5); }
+      &.active { background-color: rgba(195, 207, 244, 1);}
+    }
+
+
+  }
+}
+
+
+
+
+
+
+// ******************************************** Test Typer********************************//
+
+
+
+
+
+
+
+
+
+// ******************************************** Difficulty Picker ********************************//
+
+.difficultyPicker {
+  margin: 0;
+  background-color: #8AB6D6;
+  border: none;
+
+  line-height: 1.5;
+	font-size: clamp(14px, 2.5vw, 28px);
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &:focus {
+    outline: 0;
+    border-color: #2260ff;
+    box-shadow: 0 0 0 4px #b5c9fc;
+  }
+}
+
+input[type="radio"] {
+	// Code to hide the input
+	clip: rect(0 0 0 0);
+	clip-path: inset(100%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+
+	&:checked + span {
+		box-shadow: 0 0 0 0.0625em #0043ed;
+		background-color: #dee7ff;
+		z-index: 1;
+		color: #0043ed;
+	}
+
+}
+
+label {
+	span {
+		display: block;
+		cursor: pointer;
+		background-color: #fff;
+		padding: 0.375em .75em;
+		position: relative;
+		margin-left: .0625em;
+		box-shadow: 0 0 0 0.0625em #b5bfd9;
+		letter-spacing: .05em;
+		color: #3e4963;
+		text-align: center;
+		transition: background-color .5s ease;
+
+	}
+
+	&:first-child {
+    span { border-radius: .375em .375em 0 0 }
+  }
+
+	&:last-child {
+    span { border-radius: 0 0 .375em .375em }
+  }
+
+}
+
+

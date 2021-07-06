@@ -4,8 +4,10 @@
   "description": "An educational, code learning application. Currently aimed at the JavaScript ecosystem. Inspired by pedagogies such as project based learning, spaced repetition, 'chunking', and deliberate practice.",
   "main": "index.js",
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
+    "start": "nodemon server/index.js",
+    "snowpack": "snowpack dev",
+    "build": "snowpack build --watch",
+    "sass": "sass src/Sass:src/Css --watch --no-source-map",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +23,12 @@
   "homepage": "https://github.com/mountainsounds/code-kaizen#readme",
   "devDependencies": {
     "snowpack": "^3.7.1"
+  },
+  "dependencies": {
+    "@snowpack/plugin-sass": "^1.4.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
