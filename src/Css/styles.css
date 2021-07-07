@@ -24,7 +24,6 @@ nav {
 }
 
 .app-container {
-  padding: 10px;
   margin: 25px auto;
   position: relative;
   border-radius: 10px;
@@ -38,13 +37,268 @@ nav {
   justify-content: space-between;
 }
 
-.taskSidebar {
+.skillMenu {
   flex-basis: 200px;
   max-width: 200px;
   flex-shrink: 0;
   height: 100%;
   width: 125px;
-  background-color: #151e2f;
+  background-color: #f3f6fd;
   display: flex;
   flex-direction: column;
+  border-radius: 0 30px 30px 0;
+}
+.skillMenu .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+.skillMenu-list {
+  list-style-type: none;
+  padding: 0;
+}
+.skillMenu-list-item {
+  position: relative;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+.skillMenu-list-item span {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  color: #1f1c2e;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+}
+.skillMenu-list-item:hover {
+  background-color: rgba(195, 207, 244, 0.5);
+}
+.skillMenu-list-item.active {
+  background-color: #c3cff4;
+  cursor: auto;
+}
+
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.practiceStatusContainer {
+  display: flex;
+  width: 90%;
+  height: 3em;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.option {
+  flex: 1 1 2em;
+  color: #f0f0f0;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.5s;
+  opacity: 50%;
+}
+
+.option::before {
+  content: "";
+  position: relative;
+  width: 1.7em;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  color: #f0f0f0;
+}
+
+.option--one {
+  background: #DA0037;
+}
+
+.option--four {
+  background: #444444;
+}
+
+.option--four::before {
+  background: #444444;
+}
+
+.focus {
+  flex-basis: 13em;
+  outline: none;
+  cursor: auto;
+  opacity: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+select {
+  width: 200px;
+  padding: 5px;
+  appearance: none;
+  border-radius: 0;
+  background-color: #a7c5e3;
+}
+
+select:focus,
+button:focus {
+  outline: 0;
+}
+
+.settings-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.settings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  height: 70px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.settings.hide {
+  transform: translateY(-100%);
+}
+
+.test-container {
+  background-color: #005691;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: relative;
+  text-align: center;
+  width: 80%;
+  height: 60%;
+  margin-bottom: 150px;
+}
+
+h2 {
+  background-color: #303947;
+  padding: 8px;
+  border-radius: 4px;
+  margin: 0 0 40px;
+}
+
+h1 {
+  margin: 0;
+}
+
+input {
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 300px;
+  padding: 12px 20px;
+  margin-top: 10px;
+}
+
+.score-container {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+.time-container {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
+
+.end-game-container {
+  background-color: inherit;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.difficultySection {
+  margin: 0;
+  background-color: #8AB6D6;
+}
+.difficultySection h3 {
+  margin: 20px;
+}
+
+.difficultyPicker {
+  border: none;
+  line-height: 1.5;
+  font-size: clamp(14px, 2.5vw, 28px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.difficultyPicker:focus {
+  outline: 0;
+  border-color: #2260ff;
+  box-shadow: 0 0 0 4px #b5c9fc;
+}
+
+input[type=radio] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+input[type=radio]:checked + span {
+  box-shadow: 0 0 0 0.0625em #0043ed;
+  background-color: #dee7ff;
+  z-index: 1;
+  color: #0043ed;
+}
+
+label span {
+  display: block;
+  cursor: pointer;
+  background-color: #fff;
+  padding: 0.375em 0.75em;
+  position: relative;
+  margin-left: 0.0625em;
+  box-shadow: 0 0 0 0.0625em #b5bfd9;
+  letter-spacing: 0.05em;
+  color: #3e4963;
+  text-align: center;
+  transition: background-color 0.5s ease;
+}
+label:first-child span {
+  border-radius: 0.375em 0.375em 0 0;
+}
+label:last-child span {
+  border-radius: 0 0 0.375em 0.375em;
 }

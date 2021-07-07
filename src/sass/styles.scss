@@ -73,7 +73,10 @@ nav {
       }
 
       &:hover { background-color: rgba(195, 207, 244, 0.5); }
-      &.active { background-color: rgba(195, 207, 244, 1);}
+      &.active {
+        background-color: rgba(195, 207, 244, 1);
+        cursor: auto;
+      }
     }
 
 
@@ -86,7 +89,170 @@ nav {
 
 
 // ******************************************** Test Typer********************************//
+.mainSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
+// Practice Status (Practice / Learn)
+
+.practiceStatusContainer {
+  // margin-bottom: auto;
+  display: flex;
+  // margin-bottom: 200px;
+  width: 90%;
+  height: 3em;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.option {
+  flex: 1 1 2em;
+  color: #f0f0f0;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.5s;
+  opacity: 50%;
+  // cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.option::before {
+  content: "";
+  position: relative;
+  width: 1.7em;
+  height: 100%;
+  left: 0%;
+  top: 0%;
+  color: #f0f0f0;
+  // transform-origin: left top;
+  // transform: skew(-30deg, 0deg);
+}
+
+.option--one {
+  background: #DA0037;
+  // box-shadow: 0px 0px 40px #e57910;
+}
+
+.option--four {
+  background: #444444;
+  // box-shadow: 0px 0px 40px #104e5a;
+}
+.option--four::before { background: #444444 }
+
+
+.focus {
+  flex-basis: 13em;
+  outline: none;
+  cursor: auto;
+  opacity: 100%;
+}
+
+// Test Typing Container
+
+button {
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 5px 15px;
+}
+
+select {
+  width: 200px;
+  padding: 5px;
+  appearance: none;
+  border-radius: 0;
+  background-color: #a7c5e3;
+}
+
+select:focus,
+button:focus {
+  outline: 0;
+}
+
+.test-container {
+  background-color: #005691;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: relative;
+  text-align: center;
+  width: 80%;
+  height: 60%;
+  margin-bottom: 150px;
+
+  h2 {
+    background-color: #303947;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 0 0 40px;
+  }
+
+  #word {
+    display: block;
+    margin: 30px auto;
+    font-size: 1.2em;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+
+    &:hover {
+      background-color: #303947;
+      color: whitesmoke;
+    }
+
+    &:active {
+      transform: scale(.9);
+    }
+
+
+  }
+}
+
+
+
+input {
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 300px;
+  padding: 12px 20px;
+  margin-top: 10px;
+}
+
+.score-container {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+.time-container {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
+
+.end-game-container {
+  background-color: inherit;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
 
 
@@ -97,9 +263,18 @@ nav {
 
 // ******************************************** Difficulty Picker ********************************//
 
-.difficultyPicker {
+.difficultySection {
   margin: 0;
   background-color: #8AB6D6;
+
+  h3 {
+    margin: 30% 20px;
+    text-align: center;
+  }
+}
+
+.difficultyPicker {
+  margin-top: 20%;
   border: none;
 
   line-height: 1.5;

@@ -1,31 +1,35 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 
 
 export default function DifficultyPicker() {
   return (
-    <fieldset className='difficultyPicker'>
+		<section className='difficultySection'>
 
-      <label>
-			  <input type="radio" name='radio' />
-			  <span> Introductory </span>
-		  </label>
+			<h3> Select A Difficutly </h3>
 
-      <label>
-			  <input type="radio" name="radio" />
-			  <span> Novice </span>
-		  </label>
+    	<fieldset className='difficultyPicker'>
 
-      <label>
-			  <input type="radio" name="radio" />
-			  <span> Intermediate </span>
-		  </label>
+      	<label>
+			  	<input type="radio" name='radio' />
+			  	<span> Introductory </span>
+		  	</label>
 
-      <label>
-			  <input type="radio" name="radio" />
-			  <span> Advanced </span>
-		  </label>
+      	<label>
+			  	<input type="radio" name="radio" />
+			  	<span> Novice </span>
+		  	</label>
 
-    </fieldset>
+      	<label>
+			  	<input type="radio" name="radio" />
+			  	<span> Intermediate </span>
+		  	</label>
+
+      	<label>
+			  	<input type="radio" name="radio" />
+			  	<span> Advanced </span>
+		  	</label>
+
+    	</fieldset>
+		</section>
   )
 }

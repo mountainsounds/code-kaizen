@@ -1,20 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+import clsx from 'clsx';
 
 export default function SkillMenu() {
+  const [currentSkill, setCurrentSkill] = useState('cmdLine');
+  let cmdClsx = clsx('skillMenu-list-item', currentSkill === 'cmdLine' && 'active');
+  let vsCodeClsx = clsx('skillMenu-list-item', currentSkill === 'vsCode' && 'active');
+  let gitClsx = clsx('skillMenu-list-item', currentSkill === 'git' && 'active');
+
+  let handleSkillChange = (newSkill) => {
+      if (newSkill === currentSkill) return;
+      setCurrentSkill(newSkill);
+  }
+
   return (
     <div className='skillMenu'>
         <div className='header'>
-            <p>Choose a skill to learn!</p>
+            <h3>Skills</h3>
         </div>
 
         <ul className='skillMenu-list'>
-          <li className='skillMenu-list-item'>
+          <li onClick={() => handleSkillChange('cmdLine')} className={cmdClsx}>
             <span>Command Line</span>
           </li>
-          <li className='skillMenu-list-item active'>
+          <li onClick={() => handleSkillChange('vsCode')} className={vsCodeClsx}>
             <span>VS Code</span>
           </li>
-          <li className='skillMenu-list-item'>
+          <li onClick={() => handleSkillChange('git')} className={gitClsx}>
             <span>Git</span>
           </li>
         </ul>
