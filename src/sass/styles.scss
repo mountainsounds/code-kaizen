@@ -217,6 +217,11 @@ button:focus {
   }
 }
 
+.correct {
+  color: green;
+  font-weight: bolder;
+  transform: scale(1.1);
+}
 
 
 input {
